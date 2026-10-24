@@ -58,10 +58,10 @@ button:hover{opacity:.9}
 <label>Job Position</label>
 <select name="Job Position" required>
 <option value="">-- Select Job --</option>
-<option>1. Housekeeping Staff - عاملة نظافة</option>
-<option>2. Babysitter / Nanny - مربية أطفال</option>
-<option>3. Waiter / Waitress - نادل</option>
-<option>4. Home Service - هوم سيفرز</option>
+<option>1. Housekeeping Staff</option>
+<option>2. Babysitter / Nanny  </option>
+<option>3. Waiter / Waitress </option>
+<option>4. Home Service </option>
 <option>5. Front Desk Receptionist</option>
 <option>6. Housekeeping Supervisor</option>
 <option>7. Executive Chef / Cook</option>
@@ -79,7 +79,7 @@ button:hover{opacity:.9}
 <button type="submit">Create Account & Apply</button>
 
 <div id="ok" class="success">
-✅ تم ارسال البيانات سيتم التواصل معك في اقرب وقت<br>
+✅ <br>
 Your data has been submitted. We will contact you soon.
 </div>
 </form>
@@ -98,7 +98,7 @@ const countries=["Nepal","Afghanistan","Albania","Algeria","Argentina","Australi
 countries.forEach(c=>{
 let o=document.createElement("option");
 o.value=c;
-o.textContent=c==="Nepal"?"🇳🇵 Nepal - نيبال":c;
+o.textContent=c==="Nepal"?"🇳🇵 Nepal ":c;
 if(c==="Nepal") o.selected=true;
 list.appendChild(o);
 });
